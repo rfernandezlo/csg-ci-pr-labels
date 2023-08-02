@@ -7,7 +7,7 @@ inputs:
   repo:
     description: 'The name of the repository'
     required: true
-  pr_number:
+  pull_request:
     description: 'The number of the pull request'
     required: true
   token:
