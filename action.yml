@@ -1,0 +1,24 @@
+name: 'CSG - PR Labels '
+description: 'Manage pull request flags as a labels'
+inputs:
+  owner:
+    description: 'The owner of the repository'
+    required: true
+  repo:
+    description: 'The name of the repository'
+    required: true
+  pr_number:
+    description: 'The number of the pull request'
+    required: true
+  token:
+    description: 'The token to use to access the GitHub API'
+    required: true
+  label:
+    description: 'The new label to add to the current pull request'
+    required: false
+  label_remove:
+    description: 'The label to toggle in the current pull request'
+    required: false
+runs:
+  using: 'node16'
+  main: 'index.js'
