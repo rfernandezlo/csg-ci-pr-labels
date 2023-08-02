@@ -9846,11 +9846,11 @@ const main = async () => {
         const r_pr = core.getInput('pull_request', {required: false});
         const r_label  = core.getInput('label', {required: false});
         const r_labeld  = core.getInput('label_remove', {required: false});
-        if (r_label != undefined ){
+        if (r_label){
             await addLabel(octokit,ownership,r_pr,r_label);
         }
-        if (r_labeld != undefined ){
-            await removeLabel(octokit,ownership,r_pr,r_label);
+        if (r_labeld){
+            await removeLabel(octokit,ownership,r_pr,r_labeld);
         }        
     } catch (error) {
         core.setFailed(error.message);
