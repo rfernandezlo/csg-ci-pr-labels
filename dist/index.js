@@ -9843,13 +9843,13 @@ const main = async () => {
             owner: github.context.repo.owner,
             repo: github.context.repo.repo,
         };
-        const r_pr = core.getInput('pull_request', {required: false});
+        const r_pr = core.getInput('pull_request', {required: true});
         const r_label = core.getInput('label', {required: false});
         const r_labeld= core.getInput('label_remove', {required: false});
         if (r_label!= null){
             await addLabel(octokit,ownership,r_pr,r_label);
         }
-        if (r_labeld != null){
+        if (!r_labeld && r_labeld != null){
             await removeLabel(octokit,ownership,r_pr,r_labeld);
         }        
     } catch (error) {
