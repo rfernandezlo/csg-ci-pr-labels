@@ -9849,9 +9849,9 @@ const main = async () => {
         if (r_label!= null){
             await addLabel(octokit,ownership,r_pr,r_label);
         }
-        if (!r_labeld && r_labeld != null){
+        if (r_labeld && r_labeld != null){
             await removeLabel(octokit,ownership,r_pr,r_labeld);
-        }        
+        }
     } catch (error) {
         core.setFailed(error.message);
     }
