@@ -17,8 +17,9 @@ inputs:
     description: 'The new label to add to the current pull request'
     required: false
   label_remove:
-    description: 'The label to toggle in the current pull request'
+    description: 'The label to remove in the current pull request'
     required: false
+
 runs:
   using: 'node16'
   main: 'dist/index.js'
